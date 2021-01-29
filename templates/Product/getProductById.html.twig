@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <!-- ##### Single Product Details Area Start ##### -->
+    <section class="single_product_details_area d-flex align-items-center">
+
+        <!-- Single Product Thumb -->
+        <div class="single_product_thumb clearfix">
+            <img src="{{ asset('uploads/files/'~ product.image ) }}" height="210" width="250" alt="">
+        </div>
+        </div>
+
+        <!-- Single Product Description -->
+        <div class="single_product_desc clearfix">
+            <span>{{ product.category }}</span>
+            <a href="#">
+                <h2>{{ product.name | raw}}</h2>
+            </a>
+            <p class="product-price"><span class="old-price"></span>{{ product.price | number_format(0,""," ")  }} Dt</p>
+            <p class="product-desc">{{ product.description | raw}}</p>
+
+            <!-- Form -->
+            <form class="cart-form clearfix" method="post">
+                <!-- Select Box -->
+                <div class="select-box d-flex mt-50 mb-30">
+                    <select name="select" id="productSize" class="mr-5">
+                        <option value="value">1 kg</option>
+                        <option value="value">2 kg</option>
+                        <option value="value">3 kg</option>
+                        <option value="value">4 kg</option>
+                        <option value="value">5 kg</option>
+
+                    </select>
+                </div>
+                <!-- Cart & Favourite Box -->
+                <div class="cart-fav-box d-flex align-items-center">
+                    <!-- Cart -->
+                    {% if product.enstock == 1 %}
+                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Ajouter au panier</button>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- ##### Single Product Details Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer_area clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> A9dhili Express Tous droits réservés</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+{% endblock %}
+

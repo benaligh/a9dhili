@@ -1,0 +1,8 @@
+easy_admin:
+    entities:
+        Tag:
+            class: App\Entity\Tag
+            list:
+                actions:
+                    - {name: 'edit', icon: 'pencil', label: false, css class: 'btn btn-secondary'}
+                    - {name: 'delete', icon: 'trash', label: false, css class: 'btn btn-danger'}

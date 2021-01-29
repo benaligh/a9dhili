@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+
+    <!-- Register Section Begin -->
+    <div class="register-login-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="login-form">
+                    <h2>CONNECTEZ-VOUS</h2>
+                    <form action="#">
+                        <div class="group-input">
+                            <label for="username">EMAIL *</label>
+                            <input type="text" id="username" placeholder="Email...">
+                        </div>
+                        <div class="group-input">
+                            <label for="pass">Mot de passe *</label>
+                            <input type="password" id="pass" placeholder="******">
+                        </div>
+                        <div class="group-input gi-check">
+                            <div class="gi-more">
+                                <label for="save-pass">
+                                    Rester Connecté
+                                    <input type="checkbox" id="save-pass">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <a href="#" class="forget-pass">Mot de passe oublié</a>
+                            </div>
+                        </div>
+                        <button type="submit" class="site-btn login-btn">Connecter</button>
+                    </form>
+                    <div class="switch-login">
+                        <a href="#" class="or-login">Créer un compte</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Register Section Begin End -->
+
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer_area clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        A9dhili Express Tous droits réservés
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+
+{% endblock %}

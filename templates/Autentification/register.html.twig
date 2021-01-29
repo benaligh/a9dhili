@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block title %}Inscription{% endblock %}
+{% block body %}
+    <!-- Register Section Begin -->
+    <div class="register-login-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="register-form">
+                        <h2>INSCRIVEZ-VOUS</h2>
+                        <form action="#">
+                            <div class="group-input">
+                                <label for="username">Email*</label>
+                                <input type="text" id="username">
+                            </div>
+                            <div class="group-input">
+                                <label for="pass">Mot de passe *</label>
+                                <input type="text" id="pass">
+                            </div>
+                            <div class="group-input">
+                                <label for="con-pass">Confirmer Mot de passe*</label>
+                                <input type="text" id="con-pass">
+                            </div>
+                            <button type="submit" class="site-btn register-btn">S'inscrire</button>
+                        </form>
+                        <div class="switch-login">
+                            <a href="#" class="or-login">Connexion</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register Form Section End -->
+
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer_area clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        A9dhili Express Tous droits réservés
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+
+{% endblock %}

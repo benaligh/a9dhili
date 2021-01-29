@@ -1,0 +1,82 @@
+easy_admin:
+  design:
+    menu:
+      - label: "Product"
+        children:
+          - {entity: Product, label: "List All Product", icon: "th-list"}
+          - {entity: Product, label: "Add Product", icon: "plus", params: {action: 'new'}}
+      - label: "Category"
+        children:
+          - {entity: Category, label: "List All Categories", icon: "th-list"}
+          - {entity: Category, label: "Add Category", icon: "plus"}
+      - label: "Tag"
+        children:
+          - {entity: Tag, label: "List All Tags", icon: "th-list"}
+          - {entity: Tag, label: "Add tag", icon: "plus"}
+      - label: "Contact"
+        children:
+          - {entity: Contact, label: "List All Contact", icon: "th-list"}
+      - {label: "Settings"}
+  site_name: 'A9dhili <b>App</b>'
+  entities:
+    Product:
+      class: App\Entity\Product
+      label: "Product"
+      form:
+        fields:
+            - {type: 'group', icon: 'pencil', label: 'Basic Information', css_class: 'col-lg-7'}
+            - name
+            - slug
+            - {property: 'description', type: 'text_editor'}
+            - price
+            - enstock
+            - {type: 'group', icon: 'th-list', label: 'Other Information', css_class: 'col-lg-5'}
+            - category
+            - tags
+            - {type: 'group', icon: 'clip', label: 'image', css_class: 'col-lg-5'}
+            - { property: 'thumbnailFile', type: 'vich_image' }
+      list:
+        actions:
+            - {name: 'show', icon: 'eye', label: false, css class: 'btn btn-primary'}
+            - {name: 'edit', icon: 'pencil', label: false, css class: 'btn btn-secondary'}
+            - {name: 'delete', icon: 'trash', label: false, css class: 'btn btn-danger'}
+        batch_actions: ['delete']
+        title: "Some posts from the other world"
+        fields: [{property: 'image', type: 'image', base_path: '%uploads_path%'}, 'name', 'description', 'price', 'enstock', 'createdAt','updateAt']
+        filters: ['enstock']
+      show:
+        fields:
+          - name
+          - {property: 'description', type: 'raw'}
+          - createdAt
+          - enstock
+          - {property: 'image', type: 'image', base_path: '%uploads_path%'}
+      edit:
+        help: "Modifier un produit"
+        fields:
+          - '-tags'
+    Category:
+      class: App\Entity\Category
+      list:
+          actions:
+           - {name: 'show', icon: 'eye', label: false, css class: 'btn btn-primary'}
+           - {name: 'edit', icon: 'pencil', label: false, css class: 'btn btn-secondary'}
+           - {name: 'delete', icon: 'trash', label: false, css class: 'btn btn-danger'}
+    Tag:
+      class: App\Entity\Tag
+      list:
+          actions:
+           - {name: 'show', icon: 'eye', label: false, css class: 'btn btn-primary'}
+           - {name: 'edit', icon: 'pencil', label: false, css class: 'btn btn-secondary'}
+           - {name: 'delete', icon: 'trash', label: false, css class: 'btn btn-danger'}
+      form:
+        fields:
+          - name
+          - slug
+
+    Contact:
+          class: App\Entity\Contact
+          list:
+              actions:
+               - {name: 'delete', icon: 'trash', label: false, css class: 'btn btn-danger'}
+

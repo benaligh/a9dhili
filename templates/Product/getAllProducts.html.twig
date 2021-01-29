@@ -1,0 +1,224 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+
+
+    <!-- ##### Shop Grid Area Start ##### -->
+    <section class="shop_grid_area section-padding-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="shop_sidebar_area">
+
+                        <!-- ##### Single Widget ##### -->
+                        <div class="widget catagory mb-50">
+                            <!-- Widget Title -->
+                            <h6 class="widget-title mb-30">Catagories</h6>
+
+                            <!--  Catagories  -->
+                            <div class="catagories-menu">
+                                <ul id="menu-content2" class="menu-content collapse show">
+                                    <!-- Single Item -->
+                                    <li data-toggle="collapse" data-target="#clothing">
+                                        <a href="#">Alimentation</a>
+                                        <ul class="sub-menu collapse" id="clothing">
+                                            <li><a href="#">Liquides</a></li>
+                                            <li><a href="#">Epicerie Salée</a></li>
+                                            <li><a href="#">Epicerie Sucrée</a></li>
+                                            <li><a href="#">Frais</a></li>
+                                            <li><a href="#">Surgelé</a></li>
+                                            <li><a href="#">Entretien</a></li>
+                                            <li><a href="#">Hygiène bébé</a></li>
+                                            <li><a href="#">Boulangerie</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Single Item -->
+                                    <li data-toggle="collapse" data-target="#shoes" class="collapsed">
+                                        <a href="#">Le Marché</a>
+                                        <ul class="sub-menu collapse" id="shoes">
+                                            <li><a href="#">Légumes</a></li>
+                                            <li><a href="#">Fruits</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Single Item -->
+                                    <li data-toggle="collapse" data-target="#accessories" class="collapsed">
+                                        <a href="#">Mon Resto</a>
+                                        <ul class="sub-menu collapse" id="accessories">
+                                            <li><a href="#">Libannais</a></li>
+                                            <li><a href="#">Sandwich</a></li>
+                                            <li><a href="#">MA9LOUB</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- ##### Single Widget ##### -->
+                        <div class="widget price mb-50">
+                            <!-- Widget Title -->
+                            <h6 class="widget-title mb-30">Filter by</h6>
+                            <div class="custom-control custom-checkbox d-block mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Alimentation</label>
+                            </div>
+                            <div class="custom-control custom-checkbox d-block mb-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                <label class="custom-control-label" for="customCheck2">Marché</label>
+                            </div>
+                            <div class="custom-control custom-checkbox d-block">
+                                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                <label class="custom-control-label" for="customCheck3">Restaurant</label>
+                            </div>
+
+
+                            <!-- Widget Title 2 -->
+                            <p class="widget-title2 mb-30">Prix</p>
+
+                           {# <div class="widget-desc">
+                                <div class="slider-range">
+                                    <div data-min="49" data-max="360" data-unit="$" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="49" data-value-max="360" data-label-result="Range:">
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
+                                        <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+                                        <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+                                    </div>
+                                    <div class="range-price">Range: $49.00 - $360.00</div>
+                                </div>
+                            </div>#}
+                        </div>
+                        <!-- ##### Single Widget ##### -->
+                      {#  <div class="widget brands mb-50">
+                            <!-- Widget Title 2 -->
+                            <p class="widget-title2 mb-30">Brands</p>
+                            <div class="widget-desc">
+                                <ul>
+                                    <li><a href="#">Asos</a></li>
+                                    <li><a href="#">Mango</a></li>
+                                    <li><a href="#">River Island</a></li>
+                                    <li><a href="#">Topshop</a></li>
+                                    <li><a href="#">Zara</a></li>
+                                </ul>
+                            </div>
+                        </div>#}
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-8 col-lg-9">
+                    <div class="shop_grid_product_area">
+                        <div class="row">
+                            <div class="col-12">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                                <div class="product-topbar d-flex align-items-center justify-content-between">
+                                    <!-- Total Products -->
+                                    <div class="total-products">
+                                        <p><span>18</span> produits trouvé</p>
+                                    </div>
+                                    <!-- Sorting -->
+                                    <div class="product-sorting d-flex">
+                                        <p>Sort by:</p>
+                                        <form action="#" method="get">
+                                            <select name="select" id="sortByselect">
+                                                <option value="value">Prix</option>
+                                                <option value="value">Newest</option>
+                                                <option value="value">Price: $$ - $</option>
+                                                <option value="value">Price: $ - $$</option>
+                                            </select>
+                                            <input type="submit" class="d-none" value="">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Single Product -->
+                            {% for product in products %}
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="single-product-wrapper">
+                                        <!-- Product Image -->
+                                        <div class="product-img">
+                                           <a href="{{ path('product_show',{ 'id': product.id}) }}"><img src="{{ asset('uploads/files/'~ product.image ) }}" height="150" width="150" alt=""></a>
+                                            <!-- Product Badge -->
+                                            {% if product.enstock == 0 %}
+                                                <div class="product-badge hors_stock-badge">
+                                                    <span> Hors Stock  </span>
+                                                </div>
+                                            {% else %}
+                                                <div class="product-badge stock-badge">
+                                                    <span> en stock  </span>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+
+                                        <!-- Product Description -->
+                                        <div class="product-description">
+                                            <span>{{ product.category }}</span>
+                                            <a href="single-product-details.html">
+                                                <h6>{{ product.name }}</h6>
+                                            </a>
+                                            <p class="product-price">{{ product.price| number_format(0,""," ") }} Dt</p>
+
+                                            <!-- Hover Content -->
+                                            <div class="hover-content">
+                                                <!-- Add to Cart -->
+                                            {% if product.enstock == 1 %}
+                                                <div class="add-to-cart-btn">
+                                                    <a href="{{ path('cart_add',{'id': product.id}) }}" class="btn essence-btn"><i class=" fa fa-cart-plus"></i> Ajouter au panier</a>
+                                                </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <nav aria-label="navigation">
+                        <ul class="pagination mt-50 mb-70">
+                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link" href="#">21</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Shop Grid Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer_area clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> A9dhili Express Tous droits réservés</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+{% endblock %}
